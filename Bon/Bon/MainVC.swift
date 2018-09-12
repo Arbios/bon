@@ -1,35 +1,48 @@
-//
-//  MainVC.swift
-//  Bon
-//
-//  Created by ARBI BASHAEV on 13/09/2018.
-//  Copyright © 2018 ARBI BASHAEV. All rights reserved.
-//
-
 import UIKit
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    // MARK: - TableViewDataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1000
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        // Created cell and casted his class from MainVCCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainVCCell") as! MainVCCell
+        switch indexPath.row {
+        case 1:
+            cell.labelCell?.text = "Рестораны"
+        case 2:
+            cell.labelCell?.text = "Автомойки"
+        case 3:
+            cell.labelCell?.text = "Магазины"
+        default:
+            cell.labelCell?.text = "Пока еще нет данных"
+        }
+        
+        
+        return cell
+        
+        
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // MARK: - TableViewDelegate
 
 }
