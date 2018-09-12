@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5AA4382121487C1800823353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA4382021487C1800823353 /* AppDelegate.swift */; };
-		5AA4382321487C1800823353 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA4382221487C1800823353 /* ViewController.swift */; };
 		5AA4382621487C1800823353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA4382421487C1800823353 /* Main.storyboard */; };
 		5AA4382921487C1800823353 /* Bon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AA4382721487C1800823353 /* Bon.xcdatamodeld */; };
 		5AA4382B21487C1800823353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA4382A21487C1800823353 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		5AA4381D21487C1800823353 /* Bon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA4382021487C1800823353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5AA4382221487C1800823353 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5AA4382521487C1800823353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AA4382821487C1800823353 /* Bon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bon.xcdatamodel; sourceTree = "<group>"; };
 		5AA4382A21487C1800823353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				5AA4382021487C1800823353 /* AppDelegate.swift */,
-				5AA4382221487C1800823353 /* ViewController.swift */,
 				5AA4382421487C1800823353 /* Main.storyboard */,
 				5AA4382A21487C1800823353 /* Assets.xcassets */,
 				5AA4382C21487C1800823353 /* LaunchScreen.storyboard */,
@@ -140,7 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA4382921487C1800823353 /* Bon.xcdatamodeld in Sources */,
-				5AA4382321487C1800823353 /* ViewController.swift in Sources */,
 				5AA4382121487C1800823353 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
