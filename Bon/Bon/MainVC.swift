@@ -26,7 +26,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainVCCell") as! MainVCCell
         switch indexPath.row {
         case 1:
-            cell.labelCell?.text = "Рестораны"
+            cell.labelCell?.text = self.categories[0].category
         case 2:
             cell.labelCell?.text = "Автомойки"
         case 3:
