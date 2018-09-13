@@ -1,8 +1,23 @@
 import UIKit
 import CoreData
 
+// MARK: - Data - Categories
+let restaurants = Category(name: "Рестораны", image: nil)
+
+// MARK: - Data - Categories - Restaurants
+var cofetun = Restaurant(name: "Кофетун", price: 50, location: "г. Грозный, ул. Маяковского 11", image: nil, category: restaurants)
+
+
+
+
+
 class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    // MARK: - Properties
     
+    var delegate: MainVCDelegate?
+    
+    // MARK: - ViewDidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +46,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         switch indexPath.row {
         case 1:
-            cell.labelCell?.text = "Рестораны"
+            cell.labelCell?.text = restaurants.name
         case 2:
             cell.labelCell?.text = "Автомойки"
         case 3:
@@ -53,7 +68,13 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // RowSelected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToSubcategories", sender: nil)
+        switch indexPath.row {
+        case 1 :
+            print("Selected \(indexPath.row) category")
+            delegate?.selectedCategory(selectedCategory: "\(indexPath.row)")
+            performSegue(withIdentifier: "goToSubcategories", sender: nil)
+        default: tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     

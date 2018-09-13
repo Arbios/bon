@@ -1,10 +1,20 @@
 import UIKit
 
-class SubCategoriesVC: UITableViewController {
+class SubCategoriesVC: UITableViewController, MainVCDelegate {
 
+    func selectedCategory(selectedCategory name: String) {
+        print(name)
+    }
+    
+    
+    
+    // MARK: - ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
 
     // MARK: - Table view data source
 

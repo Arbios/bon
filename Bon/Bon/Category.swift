@@ -10,7 +10,18 @@ import Foundation
 import CoreData
 import UIKit
 
-struct Categories {
-    var category: String
+class Category {
+    var name: String
     var image: UIImage?
+    
+    init(name: String, image: UIImage?) {
+        self.name = name
+        self.image = image
+    }
 }
+
+
+
+
+
+
