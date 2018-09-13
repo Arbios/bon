@@ -53,6 +53,19 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // RowSelected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Выбрана ячейка ?? УТОЧНИТЬ ЭТОТ МОМЕНТ!!!")
+        performSegue(withIdentifier: "goToSubcategories", sender: nil)
     }
+    
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSubcategories" {
+            let controller = segue.destination as! SubCategoriesVC
+            controller.viewDidLoad()
+        }
+    }
+    
+    
+    
 }

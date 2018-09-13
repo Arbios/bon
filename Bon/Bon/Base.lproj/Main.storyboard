@@ -101,6 +101,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="wJJ-aG-tRf"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="Rxg-Xf-Kyi" kind="show" identifier="goToSubcategories" id="elO-lp-2vu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DxB-WK-hNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
