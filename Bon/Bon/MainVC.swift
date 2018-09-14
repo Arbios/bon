@@ -11,11 +11,15 @@ var cofetun = Restaurant(name: "Кофетун", price: 50, location: "г. Гр�
 
 
 
-class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate, MainVCDelegate {
 
-    // MARK: - Properties
+    var currentCategory = ""
     
-    var delegate: MainVCDelegate?
+    // DelegateFunction
+    func selectedCategory(selectedCategory name: String) {
+        currentCategory = name
+        
+    }
     
     // MARK: - ViewDidLoad
 
@@ -71,7 +75,6 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
         case 1 :
             print("Selected \(indexPath.row) category")
-            delegate?.selectedCategory(selectedCategory: "\(indexPath.row)")
             performSegue(withIdentifier: "goToSubcategories", sender: nil)
         default: tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -84,8 +87,11 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         if segue.identifier == "goToSubcategories" {
             let controller = segue.destination as! SubCategoriesVC
             controller.viewDidLoad()
+            controller.delegate = self
         }
     }
+    
+    
     
     
     
