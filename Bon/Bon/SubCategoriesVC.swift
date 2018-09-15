@@ -1,21 +1,12 @@
 import UIKit
 
 class SubCategoriesVC: UITableViewController {
-
-
-    
-    
-    
-    // MARK: - Properties
-    
-    var delegate: MainVCDelegate?
-    
     
     // MARK: - ViewDidLoad
+    var categoryActivatedName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let controller = UIStoryboard.instantiateViewController(withIdentifier: "")
     }
     
     
@@ -33,6 +24,7 @@ class SubCategoriesVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubCategoriesVCCell")
+        cell?.textLabel?.text = categoryActivatedName
         return cell!
     }
 
