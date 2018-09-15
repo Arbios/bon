@@ -112,7 +112,7 @@
         <!--Sub CategoriesVC-->
         <scene sceneID="6xk-lS-VIa">
             <objects>
-                <tableViewController id="Rxg-Xf-Kyi" customClass="SubCategoriesVC" customModule="Bon" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SubCategoriesVC" id="Rxg-Xf-Kyi" customClass="SubCategoriesVC" customModule="Bon" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z1g-f4-HQj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -10,6 +10,7 @@
 		5A6501AB2149C91F001ACEE8 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6501AA2149C91F001ACEE8 /* MainVC.swift */; };
 		5A6501AD2149CA72001ACEE8 /* MainVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6501AC2149CA72001ACEE8 /* MainVCCell.swift */; };
 		5A6501AF2149CD02001ACEE8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6501AE2149CD02001ACEE8 /* Category.swift */; };
+		5A6718F3214D3A9E003FE1B8 /* OrganizationsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6718F2214D3A9E003FE1B8 /* OrganizationsData.swift */; };
 		5A727E4D214C7FEE00CBB036 /* Carwashes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A727E4C214C7FEE00CBB036 /* Carwashes.swift */; };
 		5AA4382121487C1800823353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA4382021487C1800823353 /* AppDelegate.swift */; };
 		5AA4382621487C1800823353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA4382421487C1800823353 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		5A6501AA2149C91F001ACEE8 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		5A6501AC2149CA72001ACEE8 /* MainVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCCell.swift; sourceTree = "<group>"; };
 		5A6501AE2149CD02001ACEE8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		5A6718F2214D3A9E003FE1B8 /* OrganizationsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsData.swift; sourceTree = "<group>"; };
 		5A727E4C214C7FEE00CBB036 /* Carwashes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carwashes.swift; sourceTree = "<group>"; };
 		5AA4381D21487C1800823353 /* Bon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA4382021487C1800823353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				5A6501AE2149CD02001ACEE8 /* Category.swift */,
 				5AF0D19C214B1878003C18EE /* Restaurant.swift */,
 				5A727E4C214C7FEE00CBB036 /* Carwashes.swift */,
+				5A6718F2214D3A9E003FE1B8 /* OrganizationsData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A6718F3214D3A9E003FE1B8 /* OrganizationsData.swift in Sources */,
 				5AF0D19D214B1878003C18EE /* Restaurant.swift in Sources */,
 				5A727E4D214C7FEE00CBB036 /* Carwashes.swift in Sources */,
 				5AA438422149C60A00823353 /* DetailVC.swift in Sources */,

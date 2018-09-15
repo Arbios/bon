@@ -1,21 +1,13 @@
 import UIKit
 import CoreData
 
-// MARK: - Data - Categories
-let restaurants = Category(name: "Рестораны", image: nil)
-let carwashes = Category(name: "Автомойки", image: nil)
-// MARK: - Data - Categories - Restaurants
 
-var injir = Restaurant(name: "Чайхана", price: 80, location: "Гранд-Парк", image: nil, category: carwashes)
-var cofetun = Restaurant(name: "Кофетун", price: 50, location: "г. Грозный, ул. Маяковского 11", image: nil, category: restaurants)
-
-var shellOil = CarWashes(name: "Шелл", price: 10, location: "Заводской район", image: nil, category: carwashes)
-
-// MARK: - Data Arrays
-
-let categories = [restaurants, carwashes]
+// MARK: - Global variables
 var mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-var subController = mainStoryboard.instantiateInitialViewController() as! SubCategoriesVC
+var subController = mainStoryboard.instantiateViewController(withIdentifier: "SubCategoriesVC") as! SubCategoriesVC
+
+
+// MARK: - Class - MainVC
 
 class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -25,11 +17,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        // Получение SubCategoriesVC
-//        mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        subController = storyboard?.instantiateInitialViewController() as! SubCategoriesVC
+
     }
     
     
@@ -59,9 +47,9 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         case 1:
             cell.labelCell?.text = categories[indexPath.row].name
         case 2:
-            cell.labelCell?.text = "Магазины"
+            cell.labelCell?.text = "Вручную: Магазины"
         default:
-            cell.labelCell?.text = "Пока еще нет данных"
+            cell.labelCell?.text = "Вручную: Пока еще нет данных"
         }
         
         
@@ -78,10 +66,12 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // RowSelected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 1 :
-            print("Selected \(indexPath.row) category")
+        case 0 :
             performSegue(withIdentifier: "goToSubcategories", sender: nil)
-            subController.categoryActivatedName = "Данные из первого контроллера"
+            receivedCategory = "\(categories[indexPath.row].name)"
+        case 1 :
+            performSegue(withIdentifier: "goToSubcategories", sender: nil)
+            receivedCategory = "\(categories[indexPath.row].name)"
         default: tableView.deselectRow(at: indexPath, animated: true)
         }
     }
@@ -94,9 +84,5 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
         }
     }
-    
-    
-    
-    
     
 }
