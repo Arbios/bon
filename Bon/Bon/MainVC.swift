@@ -5,7 +5,7 @@ import CoreData
 // MARK: - Global variables
 var mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 var subController = mainStoryboard.instantiateViewController(withIdentifier: "SubCategoriesVC") as! SubCategoriesVC
-
+var organizations: [Organization] = []
 
 // MARK: - Class - MainVC
 
@@ -17,7 +17,18 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        // Adding test data to organizations
+        organizations.append(Organization(name: "Инжир", price: 80, location: "ГрандПарк", image: nil, category: restaurants))
+        organizations.append(Organization(name: "Шаурма Номер 1", price: 35, location: "Минутка", image: nil, category: restaurants))
+        organizations.append(Organization(name: "Кафе Акбар", price: 15, location: "Микрорайон", image: nil, category: restaurants))
+        organizations.append(Organization(name: "WhiteCafe", price: 80, location: "ул. Шейха-Али Митаева", image: nil, category: restaurants))
+        organizations.append(Organization(name: "Чайхана", price: 80, location: "Гранд-Парк", image: nil, category: restaurants))
+        organizations.append(Organization(name: "Кофетун", price: 50, location: "г. Грозный, ул. Маяковского 11", image: nil, category: restaurants))
+        organizations.append(Organization(name: "American Steak House", price: 90, location: "ул. Первомайская 29", image: nil, category: restaurants))
+        organizations.append(Organization(name: "Точка", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: restaurants))
     }
     
     
@@ -52,10 +63,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell.labelCell?.text = "Вручную: Пока еще нет данных"
         }
         
-        
         return cell
-        
-        
         
     }
     

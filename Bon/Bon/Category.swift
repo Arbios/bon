@@ -12,9 +12,9 @@ import UIKit
 
 class Category {
     var name: String
-    var image: UIImage?
+    var image: String?
     
-    init(name: String, image: UIImage?) {
+    init(name: String, image: String?) {
         self.name = name
         self.image = image
     }

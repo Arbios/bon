@@ -31,9 +31,9 @@ class SubCategoriesVC: UITableViewController {
         
         switch receivedCategory {
         case "Автомойки":
-            return carwashItems.count
+            return organizations.count
         case "Рестораны":
-            return restaurantItems.count
+            return organizations.count
         default:
             return 0
         }
@@ -45,11 +45,9 @@ class SubCategoriesVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubCategoriesVCCell")
         switch receivedCategory {
         case "Автомойки":
-            cell?.textLabel?.text = carwashItems[indexPath.row].name
-            print("Получена категория Автомойки")
+            cell?.textLabel?.text = organizations[indexPath.row].name
         case "Рестораны":
-            cell?.textLabel?.text = restaurantItems[indexPath.row].name
-            print("Получена категория Рестораны")
+            cell?.textLabel?.text = organizations[indexPath.row].name
         default:
             print("Ошибка! Получена неизвестная категориия.")
         }

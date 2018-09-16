@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class Restaurant {
+class Organization {
     var name: String
     var price: Int
     var location: String
@@ -14,6 +14,9 @@ class Restaurant {
         self.location = location
         self.image = image
         self.category = category
+        
+        // Init message
+        print("Инициализирована организация \(name)")
     }
 
 }
