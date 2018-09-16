@@ -31,29 +31,15 @@ class SubCategoriesVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        switch receivedCategory {
-        case "Автомойки":
-            return organization.count
-        case "Рестораны":
-            return organization.count
-        default:
-            return 0
-        }
+        return organization.count
         
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubCategoriesVCCell")
-        switch receivedCategory {
-        case "Автомойки":
-            cell?.textLabel?.text = self.organization[indexPath.row].name
-        case "Рестораны":
-            cell?.textLabel?.text = self.organization[indexPath.row].name
-        default:
-            print("Ошибка! Получена неизвестная категориия.")
-        }
         
+        cell?.textLabel?.text = self.organization[indexPath.row].name
         return cell!
     }
     

@@ -39,7 +39,11 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         organizations.append(Organization(name: "Чайхана", price: 80, location: "Гранд-Парк", image: nil, category: categories[0]))
         organizations.append(Organization(name: "Кофетун", price: 50, location: "г. Грозный, ул. Маяковского 11", image: nil, category: categories[0]))
         organizations.append(Organization(name: "American Steak House", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[0]))
-        organizations.append(Organization(name: "Точка", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[0]))
+        organizations.append(Organization(name: "ILIS FastFood", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[2]))
+        organizations.append(Organization(name: "Легион", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[3]))
+        organizations.append(Organization(name: "Дом торжеств Имандис", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[4]))
+        organizations.append(Organization(name: "Супермаркет Хайр", price: 10, location: "ул. Сквозная", image: nil, category: categories[6]))
+        organizations.append(Organization(name: "Точка", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[2]))
         organizations.append(Organization(name: "ShellOil", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
         organizations.append(Organization(name: "Ташкала", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
         organizations.append(Organization(name: "Гарант", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
@@ -84,15 +88,10 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // RowSelected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0 :
+        
             performSegue(withIdentifier: "goToSubcategories", sender: nil)
             receivedCategory = "\(categories[indexPath.row].name)"
-        case 1 :
-            performSegue(withIdentifier: "goToSubcategories", sender: nil)
-            receivedCategory = "\(categories[indexPath.row].name)"
-        default: tableView.deselectRow(at: indexPath, animated: true)
-        }
+        
     }
     
     
