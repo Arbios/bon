@@ -20,8 +20,26 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     // Adding test categories
+    let categoryEntity = NSEntityDescription.entity(forEntityName: "Category", in: context!)!
+    let restaurantTest = NSManagedObject(entity: categoryEntity, insertInto: context)
+    restaurantTest.setValue("Рестораны", forKey: "name")
+    do {
+      try context?.save()
+      print("Data saved to context")
+    } catch {
+      print("Ошибка при сохранении в контекст")
+    }
     
-    
+    let fetchRequest = NSFetchRequest<Category>(entityName: "Category")
+    fetchRequest.fetchLimit = 1
+    let predicate = NSPredicate(format: "name contains 'ы'")
+    fetchRequest.predicate = predicate
+    do {
+      let result = try context?.fetch(fetchRequest)
+      print(result![0].name!)
+    } catch {
+      print("Ахахаха, ты не получишь никаких данных с этого жалкого фетч реквеста, потому что ты дебил не смог правильно сформулировать запрос.")
+    }
     /*
     categories.append(Category(name: "Рестораны", image: nil))
     categories.append(Category(name: "Автомойки", image: nil))
