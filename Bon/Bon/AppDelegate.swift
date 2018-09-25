@@ -16,8 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+
+      
+      // Назначаем переменной context, наш context
+      let navigationController = UINavigationController(nibName: "Main", bundle: nil)
+      let vc = navigationController.viewControllers.first as! MainVC
+      vc.context = persistentContainer.viewContext
+      
+      return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

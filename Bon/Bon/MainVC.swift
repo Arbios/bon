@@ -12,7 +12,7 @@ var categories: [Category] = []
 class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   var currentCategory = ""
-  var context = CoreDataHelper()
+  var context: NSManagedObjectContext?
   // MARK: - ViewDidLoad
   
   override func viewDidLoad() {
@@ -22,7 +22,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // Adding test categories
     
     
-    
+    /*
     categories.append(Category(name: "Рестораны", image: nil))
     categories.append(Category(name: "Автомойки", image: nil))
     categories.append(Category(name: "Фаст-фуд", image: nil))
@@ -31,9 +31,10 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     categories.append(Category(name: "Парикмахерские", image: nil))
     categories.append(Category(name: "Продуктовые магазины", image: nil))
     categories.append(Category(name: "Услуги", image: nil))
-    
+    */
     // Adding test data to organizations
     // Important! Need to decide, how to replcae unsafe selection categories
+    /*
     organizations.append(Organization(name: "Инжир", price: 80, location: "ГрандПарк", image: nil, category: categories[0]))
     organizations.append(Organization(name: "Шаурма Номер 1", price: 35, location: "Минутка", image: nil, category: categories[0]))
     organizations.append(Organization(name: "Кафе Акбар", price: 15, location: "Микрорайон", image: nil, category: categories[0]))
@@ -51,7 +52,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     organizations.append(Organization(name: "Гарант", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
     organizations.append(Organization(name: "НаноМойка", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
     organizations.append(Organization(name: "Автомойка AMG", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
-    
+    */
     print(organizations)
   }
   

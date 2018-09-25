@@ -21,7 +21,7 @@ class SubCategoriesVC: UITableViewController {
         super.viewDidLoad()
         
         organization = organizations.filter({ (org) -> Bool in
-            return org.category.name == receivedCategory
+          return org.category?.name == receivedCategory
         })
     }
     
