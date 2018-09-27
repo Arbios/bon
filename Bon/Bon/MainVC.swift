@@ -18,10 +18,10 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
     // Adding test categories
     let categoryEntity = NSEntityDescription.entity(forEntityName: "Category", in: context!)!
     let restaurantTest = NSManagedObject(entity: categoryEntity, insertInto: context)
+    restaurantTest.setValue("Автомойки", forKey: "name")
     restaurantTest.setValue("Рестораны", forKey: "name")
     do {
       try context?.save()
@@ -30,47 +30,37 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
       print("Ошибка при сохранении в контекст")
     }
     
-    let fetchRequest = NSFetchRequest<Category>(entityName: "Category")
-    fetchRequest.fetchLimit = 1
-    let predicate = NSPredicate(format: "name contains 'ы'")
-    fetchRequest.predicate = predicate
-    do {
-      let result = try context?.fetch(fetchRequest)
-      print(result![0].name!)
-    } catch {
-      print("Ахахаха, ты не получишь никаких данных с этого жалкого фетч реквеста, потому что ты дебил не смог правильно сформулировать запрос.")
-    }
     /*
-    categories.append(Category(name: "Рестораны", image: nil))
-    categories.append(Category(name: "Автомойки", image: nil))
-    categories.append(Category(name: "Фаст-фуд", image: nil))
-    categories.append(Category(name: "Спортзал", image: nil))
-    categories.append(Category(name: "Дом торжеств", image: nil))
-    categories.append(Category(name: "Парикмахерские", image: nil))
-    categories.append(Category(name: "Продуктовые магазины", image: nil))
-    categories.append(Category(name: "Услуги", image: nil))
-    */
+     categories.append(Category(name: "Рестораны", image: nil))
+     categories.append(Category(name: "Автомойки", image: nil))
+     categories.append(Category(name: "Фаст-фуд", image: nil))
+     categories.append(Category(name: "Спортзал", image: nil))
+     categories.append(Category(name: "Дом торжеств", image: nil))
+     categories.append(Category(name: "Парикмахерские", image: nil))
+     categories.append(Category(name: "Продуктовые магазины", image: nil))
+     categories.append(Category(name: "Услуги", image: nil))
+     */
     // Adding test data to organizations
     // Important! Need to decide, how to replcae unsafe selection categories
     /*
-    organizations.append(Organization(name: "Инжир", price: 80, location: "ГрандПарк", image: nil, category: categories[0]))
-    organizations.append(Organization(name: "Шаурма Номер 1", price: 35, location: "Минутка", image: nil, category: categories[0]))
-    organizations.append(Organization(name: "Кафе Акбар", price: 15, location: "Микрорайон", image: nil, category: categories[0]))
-    organizations.append(Organization(name: "WhiteCafe", price: 80, location: "ул. Шейха-Али Митаева", image: nil, category: categories[0]))
-    organizations.append(Organization(name: "Чайхана", price: 80, location: "Гранд-Парк", image: nil, category: categories[0]))
-    organizations.append(Organization(name: "Кофетун", price: 50, location: "г. Грозный, ул. Маяковского 11", image: nil, category: categories[0]))
-    organizations.append(Organization(name: "American Steak House", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[0]))
-    organizations.append(Organization(name: "ILIS FastFood", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[2]))
-    organizations.append(Organization(name: "Легион", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[3]))
-    organizations.append(Organization(name: "Дом торжеств Имандис", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[4]))
-    organizations.append(Organization(name: "Супермаркет Хайр", price: 10, location: "ул. Сквозная", image: nil, category: categories[6]))
-    organizations.append(Organization(name: "Точка", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[2]))
-    organizations.append(Organization(name: "ShellOil", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
-    organizations.append(Organization(name: "Ташкала", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
-    organizations.append(Organization(name: "Гарант", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
-    organizations.append(Organization(name: "НаноМойка", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
-    organizations.append(Organization(name: "Автомойка AMG", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
-    */
+     organizations.append(Organization(name: "Инжир", price: 80, location: "ГрандПарк", image: nil, category: categories[0]))
+     organizations.append(Organization(name: "Шаурма Номер 1", price: 35, location: "Минутка", image: nil, category: categories[0]))
+     organizations.append(Organization(name: "Кафе Акбар", price: 15, location: "Микрорайон", image: nil, category: categories[0]))
+     organizations.append(Organization(name: "WhiteCafe", price: 80, location: "ул. Шейха-Али Митаева", image: nil, category: categories[0]))
+     organizations.append(Organization(name: "Чайхана", price: 80, location: "Гранд-Парк", image: nil, category: categories[0]))
+     organizations.append(Organization(name: "Кофетун", price: 50, location: "г. Грозный, ул. Маяковского 11", image: nil, category: categories[0]))
+     organizations.append(Organization(name: "American Steak House", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[0]))
+     organizations.append(Organization(name: "ILIS FastFood", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[2]))
+     organizations.append(Organization(name: "Легион", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[3]))
+     organizations.append(Organization(name: "Дом торжеств Имандис", price: 90, location: "ул. Первомайская 29", image: nil, category: categories[4]))
+     organizations.append(Organization(name: "Супермаркет Хайр", price: 10, location: "ул. Сквозная", image: nil, category: categories[6]))
+     organizations.append(Organization(name: "Точка", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[2]))
+     organizations.append(Organization(name: "ShellOil", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
+     organizations.append(Organization(name: "Ташкала", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
+     organizations.append(Organization(name: "Гарант", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
+     organizations.append(Organization(name: "НаноМойка", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
+     organizations.append(Organization(name: "Автомойка AMG", price: 40, location: "г. Грозный, пр-т Победы 20", image: nil, category: categories[1]))
+     */
     print(organizations)
   }
   
@@ -109,12 +99,33 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   // RowSelected
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
     performSegue(withIdentifier: "goToSubcategories", sender: nil)
     receivedCategory = "\(categories[indexPath.row].name)"
     
   }
   
+  func fetchData(category: String) -> String {
+    let fetchRequest = NSFetchRequest<Category>(entityName: category)
+    var resultString: String = ""
+    //    fetchRequest.fetchLimit = 1
+    //    let predicate = NSPredicate(format: "name contains 'o'")
+    //    fetchRequest.predicate = predicate
+    do {
+      let result = try context?.fetch(fetchRequest)
+      print(fetchRequest.description)
+      for i in result! {
+        resultString.append(i.name ?? "Unknown")
+      }
+    } catch {
+      print("Ахахаха, ты не получишь никаких данных с этого жалкого фетч реквеста, потому что ты дебил не смог правильно сформулировать запрос.")
+    }
+    return resultString
+  }
+  
+  @IBAction func serchButtonPressed(_ sender: UIButton) {
+    // MARK: - Fetching data from DB
+    print(fetchData(category: "Category"))
+  }
   
   // MARK: - Navigation
   
