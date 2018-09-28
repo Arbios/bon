@@ -1,13 +1,12 @@
 import UIKit
-import CoreData
 
 
 // MARK: - Global variables
 var mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 var subController = mainStoryboard.instantiateViewController(withIdentifier: "SubCategoriesVC") as! SubCategoriesVC
-var organizations: [Organization] = []
+var organizations: [String] = []
 // Категории
-var categories: [Category] = []
+var categories: [String] = []
 
 // MARK: - Class - MainVC
 class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -17,24 +16,10 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   static let mainVC = MainVC()
   
   var currentCategory = ""
-  var context: NSManagedObjectContext?
   // MARK: - ViewDidLoad
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Adding test categories
-    let categoryEntity = NSEntityDescription.entity(forEntityName: "Category", in: context!)!
-    let restaurantTest = NSManagedObject(entity: categoryEntity, insertInto: context)
-    restaurantTest.setValue("Автомойки", forKey: "name")
-    restaurantTest.setValue("Рестораны", forKey: "name")
-    do {
-      try context?.save()
-      print("Data saved to context")
-    } catch {
-      print("Ошибка при сохранении в контекст")
-    }
-    
-    categories = fetchData(category: "Category")
     print(organizations)
   }
   
@@ -56,7 +41,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // Created cell and casted his class from MainVCCell
     let cell = tableView.dequeueReusableCell(withIdentifier: "MainVCCell") as! MainVCCell
-    cell.labelCell.text = categories[indexPath.row].name
+    cell.labelCell.text = categories[indexPath.row]
     
     return cell
   }
@@ -68,30 +53,12 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   // RowSelected
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     performSegue(withIdentifier: "goToSubcategories", sender: nil)
-    receivedCategory = "\(categories[indexPath.row].name ?? "Категория не получена")"
+    receivedCategory = categories[indexPath.row]
     
-  }
-  
-  func fetchData(category: String) -> [Category] {
-    let fetchRequest = NSFetchRequest<Category>(entityName: category)
-    var resultString: [Category] = []
-    //    fetchRequest.fetchLimit = 1
-    //    let predicate = NSPredicate(format: "name contains 'o'")
-    //    fetchRequest.predicate = predicate
-    do {
-      let result = try context?.fetch(fetchRequest)
-      for i in result! {
-        resultString.append(i)
-      }
-    } catch {
-      print("Ахахаха, ты не получишь никаких данных с этого жалкого фетч реквеста, потому что ты дебил не смог правильно сформулировать запрос.")
-    }
-    return resultString
   }
   
   @IBAction func serchButtonPressed(_ sender: UIButton) {
     // MARK: - Fetching data from DB
-    print(fetchData(category: "Category"))
     
   }
   

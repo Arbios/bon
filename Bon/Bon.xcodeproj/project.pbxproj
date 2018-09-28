@@ -12,7 +12,6 @@
 		5A6501AD2149CA72001ACEE8 /* MainVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6501AC2149CA72001ACEE8 /* MainVCCell.swift */; };
 		5AA4382121487C1800823353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA4382021487C1800823353 /* AppDelegate.swift */; };
 		5AA4382621487C1800823353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA4382421487C1800823353 /* Main.storyboard */; };
-		5AA4382921487C1800823353 /* Bon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AA4382721487C1800823353 /* Bon.xcdatamodeld */; };
 		5AA4382B21487C1800823353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA4382A21487C1800823353 /* Assets.xcassets */; };
 		5AA4382E21487C1800823353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA4382C21487C1800823353 /* LaunchScreen.storyboard */; };
 		5AA438402149C5BB00823353 /* SubCategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA4383F2149C5BB00823353 /* SubCategoriesVC.swift */; };
@@ -26,7 +25,6 @@
 		5AA4381D21487C1800823353 /* Bon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA4382021487C1800823353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA4382521487C1800823353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5AA4382821487C1800823353 /* Bon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bon.xcdatamodel; sourceTree = "<group>"; };
 		5AA4382A21487C1800823353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AA4382D21487C1800823353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AA4382F21487C1800823353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 		5AA438352149C49400823353 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5AA4382721487C1800823353 /* Bon.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -162,7 +159,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "ARBI BASHAEV";
 				TargetAttributes = {
 					5AA4381C21487C1800823353 = {
@@ -213,7 +210,6 @@
 				5A6501AB2149C91F001ACEE8 /* MainVC.swift in Sources */,
 				5AA438402149C5BB00823353 /* SubCategoriesVC.swift in Sources */,
 				5A6501AD2149CA72001ACEE8 /* MainVCCell.swift in Sources */,
-				5AA4382921487C1800823353 /* Bon.xcdatamodeld in Sources */,
 				5AA4382121487C1800823353 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +250,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -261,6 +258,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -311,6 +309,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -318,6 +317,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -399,19 +399,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		5AA4382721487C1800823353 /* Bon.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				5AA4382821487C1800823353 /* Bon.xcdatamodel */,
-			);
-			currentVersion = 5AA4382821487C1800823353 /* Bon.xcdatamodel */;
-			path = Bon.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 5AA4381521487C1800823353 /* Project object */;
 }

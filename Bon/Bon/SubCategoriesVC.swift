@@ -14,14 +14,14 @@ class SubCategoriesVC: UITableViewController {
     // MARK: - Class variables
     
     
-    var organization: [Organization] = []
+    var organization: [String] = []
     // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         organization = organizations.filter({ (org) -> Bool in
-          return org.category?.name == receivedCategory
+          return org == receivedCategory
         })
     }
     
@@ -39,7 +39,7 @@ class SubCategoriesVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubCategoriesVCCell")
         
-        cell?.textLabel?.text = self.organization[indexPath.row].name
+        cell?.textLabel?.text = self.organization[indexPath.row]
         return cell!
     }
     
