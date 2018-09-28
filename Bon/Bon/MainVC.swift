@@ -68,7 +68,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   // RowSelected
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     performSegue(withIdentifier: "goToSubcategories", sender: nil)
-    receivedCategory = "\(categories[indexPath.row].name)"
+    receivedCategory = "\(categories[indexPath.row].name ?? "Категория не получена")"
     
   }
   
