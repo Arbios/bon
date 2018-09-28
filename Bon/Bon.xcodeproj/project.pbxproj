@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0CFF1B215C649000F5B246 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 5A0CFF1A215C649000F5B246 /* Data */; };
 		5A6501AB2149C91F001ACEE8 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6501AA2149C91F001ACEE8 /* MainVC.swift */; };
 		5A6501AD2149CA72001ACEE8 /* MainVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6501AC2149CA72001ACEE8 /* MainVCCell.swift */; };
 		5AA4382121487C1800823353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA4382021487C1800823353 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A0CFF1A215C649000F5B246 /* Data */ = {isa = PBXFileReference; lastKnownFileType = text; path = Data; sourceTree = "<group>"; };
 		5A6501AA2149C91F001ACEE8 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		5A6501AC2149CA72001ACEE8 /* MainVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCCell.swift; sourceTree = "<group>"; };
 		5AA4381D21487C1800823353 /* Bon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				5AA438352149C49400823353 /* Model */,
 				5AA4383A2149C4C300823353 /* Supporting files */,
 				5AE33965215935CF000DED63 /* Entities */,
+				5A0CFF1A215C649000F5B246 /* Data */,
 			);
 			path = Bon;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			files = (
 				5AA4382E21487C1800823353 /* LaunchScreen.storyboard in Resources */,
 				5AA4382B21487C1800823353 /* Assets.xcassets in Resources */,
+				5A0CFF1B215C649000F5B246 /* Data in Resources */,
 				5AA4382621487C1800823353 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
