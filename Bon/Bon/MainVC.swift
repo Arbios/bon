@@ -20,9 +20,14 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let organization = Organization()
+    organization.distance = 8
+    organization.name = "Кофетун"
+    print("\(organization.name)" + "\(organization.distance)")
+    
     print(organizations)
   }
-  
   
   // MARK: - TableViewDataSource
   
@@ -45,7 +50,6 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     return cell
   }
-  
   
   // MARK: - TableViewDelegate
   
