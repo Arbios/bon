@@ -25,16 +25,13 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let restaurants = ["Кофетун","Чайхана","Стейк-Хаус","Шашлычная Северная","Ресторан Точка","Patio","WhiteCafe","PizzaHouse","BurgerAvenue","CherryCake","SteakBro"]
     
-    let myCompany = Organization()
-    myCompany.add(name: "Patio", distance: 2)
-    
     // REALM Data
     let organization = Organization()
     organization.distance = 8
     organization.name = "Кофетун"
     
     try! realm.write {
-      realm.add(myCompany)
+      realm.create(Organization.self, value: ["BurgerAvenue", 12])
     }
     
     print(organizations)
@@ -60,6 +57,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let cellRealm = realm.objects(Organization.self)[indexPath.row].name
 
+    cell.textLabel?.text = organizations[indexPath.row]
     cell.labelCell.text = cellRealm
     
     return cell
