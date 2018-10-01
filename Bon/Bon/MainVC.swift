@@ -1,5 +1,5 @@
 import UIKit
-
+import RealmSwift
 
 // MARK: - Global variables
 var mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -11,7 +11,8 @@ var categories: [String] = []
 // MARK: - Class - MainVC
 class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
-  
+  // Get Realm
+  let realm = try! Realm()
   
   static let mainVC = MainVC()
   
@@ -21,10 +22,20 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    
+    let restaurants = ["Кофетун","Чайхана","Стейк-Хаус","Шашлычная Северная","Ресторан Точка","Patio","WhiteCafe","PizzaHouse","BurgerAvenue","CherryCake","SteakBro"]
+    
+    let myCompany = Organization()
+    myCompany.add(name: "Patio", distance: 2)
+    
+    // REALM Data
     let organization = Organization()
     organization.distance = 8
     organization.name = "Кофетун"
-    print("\(organization.name)" + "\(organization.distance)")
+    
+    try! realm.write {
+      realm.add(myCompany)
+    }
     
     print(organizations)
   }
@@ -38,15 +49,18 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   //  Rows
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return categories.count
+    return realm.objects(Organization.self).count
   }
   
-  // Cells
+  // MARK: - Cell For Row At IndexPath
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
     // Created cell and casted his class from MainVCCell
     let cell = tableView.dequeueReusableCell(withIdentifier: "MainVCCell") as! MainVCCell
-    cell.labelCell.text = categories[indexPath.row]
+    
+    let cellRealm = realm.objects(Organization.self)[indexPath.row].name
+
+    cell.labelCell.text = cellRealm
     
     return cell
   }
@@ -57,7 +71,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   // RowSelected
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     performSegue(withIdentifier: "goToSubcategories", sender: nil)
-    receivedCategory = categories[indexPath.row]
+    receivedCategory = realm.objects(Organization.self)[indexPath.row].name
     
   }
   
